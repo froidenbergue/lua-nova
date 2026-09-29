@@ -70,8 +70,14 @@
           <a href="#atendimento">Atendimento</a>
           <a href="#loja">Loja</a>
         </nav>
-        <a
-          class="social-icon whatsapp-header"
+        <div class="header__social" aria-label="Redes sociais e WhatsApp">
+          <a class="social-icon" href="#" data-rede="instagram" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg>
+          </a>
+          <a class="social-icon" href="#" data-rede="facebook" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4.5h-3c-3.3 0-5 1.9-5 5.2V12H6v3.5h3V21h3.7v-5.5H16l.6-3.5h-3.9V10c0-1.3.4-2 1.3-2Z"></path></svg>
+          </a>
+          <a class="social-icon whatsapp-header"
           href="#"
           data-whatsapp-menu
           aria-label="WhatsApp"
@@ -83,8 +89,8 @@
             ></path>
           </svg>
         </a>
-        <button
-          class="burger"
+        </div>
+        <button class="burger"
           id="burger"
           aria-label="Abrir menu"
           aria-expanded="false"
@@ -98,14 +104,6 @@
     <main id="conteudo">
       <section class="hero" id="inicio">
         <div class="container hero__in">
-          <div class="hero__logo">
-            <img
-              src="assets/images/logo.jpg"
-              alt="Lua Nova, monograma LN dourado com poeira de estrelas"
-              width="640"
-              height="640"
-            />
-          </div>
           <div class="hero__txt">
             <p class="hero__tag" id="status">Desde 2012 em Santo Ângelo/RS</p>
             <p class="hero__sub">
@@ -123,6 +121,9 @@
                 >Grupo de promoções</a
               >
             </div>
+          </div>
+          <div class="hero__foto">
+            <img src="assets/images/modelo-lua-nova.jpg" alt="Modelo com vestido preto e detalhe dourado" width="912" height="1181" fetchpriority="high" />
           </div>
         </div>
       </section>
