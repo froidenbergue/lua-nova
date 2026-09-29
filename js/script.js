@@ -59,6 +59,41 @@
   });
   $("#status").appendChild(el("span", { class: "pill " + (aberto ? "pill--on" : "pill--off") }, aberto ? "Aberto agora" : "Fechado no momento"));
 
+
+  /* Menu de atendentes do WhatsApp */
+  const whatsappMenu = $("#whatsapp-menu");
+  const whatsappFab = $("#whatsapp-fab");
+  const whatsappHeader = $("[data-whatsapp-menu]");
+
+  const montarMenuWhatsApp = () => {
+    if (!whatsappMenu) return;
+    whatsappMenu.innerHTML = `<div class="whatsapp-menu__title">Fale com uma de nossas atendentes</div>`;
+    C.equipe.forEach((p) => {
+      const a = el("a", { href: wa(p.whatsapp), target: "_blank", rel: "noopener", "aria-label": `Falar com ${p.nome} no WhatsApp` },
+        `<span class="whatsapp-menu__icon">WA</span><span><span class="whatsapp-menu__name">${p.nome}</span><span class="whatsapp-menu__role">${p.cargo}</span></span>`);
+      whatsappMenu.appendChild(a);
+    });
+  };
+
+  const alternarWhatsApp = () => {
+    if (!whatsappMenu) return;
+    const abrir = !whatsappMenu.classList.contains("open");
+    whatsappMenu.classList.toggle("open", abrir);
+    whatsappMenu.setAttribute("aria-hidden", String(!abrir));
+    if (whatsappFab) whatsappFab.setAttribute("aria-expanded", String(abrir));
+  };
+
+  montarMenuWhatsApp();
+  whatsappFab?.addEventListener("click", alternarWhatsApp);
+  whatsappHeader?.addEventListener("click", (ev) => { ev.preventDefault(); alternarWhatsApp(); });
+  document.addEventListener("click", (ev) => {
+    if (whatsappMenu?.classList.contains("open") && !ev.target.closest(".whatsapp-fab-wrap") && !ev.target.closest("[data-whatsapp-menu]")) {
+      whatsappMenu.classList.remove("open");
+      whatsappMenu.setAttribute("aria-hidden", "true");
+      whatsappFab?.setAttribute("aria-expanded", "false");
+    }
+  });
+
   /* Menu mobile */
   const burger = $("#burger"), menu = $("#menu");
   const fechar = () => { menu.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); burger.setAttribute("aria-label", "Abrir menu"); };
