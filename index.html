@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lua Nova | Roupas e calçados em Santo Ângelo/RS</title>
+  <meta name="description" content="Loja de roupas e calçados femininos, masculinos, infantis e para bebês em Santo Ângelo/RS. Conheça as marcas, a equipe e fale direto no WhatsApp.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Lua Nova | Roupas e calçados em Santo Ângelo/RS">
+  <meta property="og:description" content="Moda para toda a família, com atendimento de perto. Fale direto no WhatsApp.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ClothingStore","name":"Lua Nova","foundingDate":"2012",
+   "address":{"@type":"PostalAddress","streetAddress":"Avenida Sagrada Família, 64","addressLocality":"Santo Ângelo","addressRegion":"RS","postalCode":"98805-438","addressCountry":"BR"},
+   "openingHours":["Mo-Fr 08:30-12:00","Mo-Fr 13:30-18:30","Sa 08:30-17:00"],
+   "sameAs":["https://www.instagram.com/luanova.santoangelo/","https://www.facebook.com/vanessa.luanova.9?locale=pt_BR"]}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="header" id="topo">
+    <div class="container header__in">
+      <a class="brand" href="#inicio" aria-label="Lua Nova, início">
+        <img src="assets/images/logo.jpg" alt="Logo Lua Nova" width="48" height="48">
+        <span>Lua Nova</span>
+      </a>
+      <nav class="nav" id="menu" aria-label="Principal">
+        <a href="#inicio">Início</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#atendimento">Atendimento</a>
+        <a href="#loja">Loja</a>
+      </nav>
+      <a class="btn btn--sm" href="#atendimento">WhatsApp</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero__in">
+        <div class="hero__txt">
+          <p class="hero__tag" id="status">Desde 2012 em Santo Ângelo/RS</p>
+          <h1>Moda para toda a família, com atendimento de perto.</h1>
+          <p class="hero__sub">Roupas e calçados femininos, masculinos, infantis e para bebês, na Avenida Sagrada Família, em Santo Ângelo.</p>
+          <div class="hero__cta">
+            <a class="btn" href="#atendimento">Escolher quem me atende</a>
+            <a class="btn btn--ghost" href="#" data-grupo target="_blank" rel="noopener">Grupo de promoções</a>
+          </div>
+        </div>
+        <div class="hero__logo">
+          <img src="assets/images/logo.jpg" alt="Lua Nova, monograma LN dourado com poeira de estrelas" width="640" height="640">
+        </div>
+      </div>
+    </section>
+
+    <section class="familia" aria-labelledby="t-familia">
+      <div class="container">
+        <h2 id="t-familia">Roupas e calçados para cada fase da vida</h2>
+        <ul class="familia__lista">
+          <li><strong>Feminino</strong><span>Roupas e calçados para mulheres.</span></li>
+          <li><strong>Masculino</strong><span>Roupas e calçados para homens.</span></li>
+          <li><strong>Infantil</strong><span>Roupas e calçados para crianças.</span></li>
+          <li><strong>Bebê</strong><span>Roupas e calçados para bebês.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="marcas" id="marcas" aria-labelledby="t-marcas">
+      <div class="container marcas__head">
+        <h2 id="t-marcas">Marcas que você encontra na Lua Nova</h2>
+        <p>Passe por aqui e conheça as marcas com que trabalhamos.</p>
+      </div>
+      <div class="marquee" id="marquee" aria-label="Carrossel de marcas">
+        <ul class="marquee__track" id="marcas-track"></ul>
+      </div>
+    </section>
+
+    <section class="atend" id="atendimento" aria-labelledby="t-atend">
+      <div class="container">
+        <div class="atend__head">
+          <h2 id="t-atend">Escolha com quem falar</h2>
+          <p>Toque na foto e a conversa abre direto no WhatsApp de quem vai te atender.</p>
+        </div>
+        <ul class="equipe" id="equipe"></ul>
+      </div>
+    </section>
+
+    <section class="loja" id="loja" aria-labelledby="t-loja">
+      <div class="container loja__in">
+        <div class="loja__info">
+          <h2 id="t-loja">Venha nos visitar</h2>
+          <address id="endereco"></address>
+          <h3>Horário de funcionamento</h3>
+          <dl class="horarios" id="horarios"></dl>
+          <div class="loja__btns">
+            <a class="btn" href="#" data-maps target="_blank" rel="noopener">Ver no Google Maps</a>
+            <a class="btn btn--ghost" href="#" data-rede="instagram" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn--ghost" href="#" data-rede="facebook" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+        <div class="loja__mapa">
+          <iframe id="mapa" title="Mapa com a localização da Lua Nova em Santo Ângelo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__in">
+      <a class="brand" href="#topo"><img src="assets/images/logo.jpg" alt="" width="48" height="48"><span>Lua Nova</span></a>
+      <p id="rodape-end"></p>
+      <p><a href="#" data-rede="instagram" target="_blank" rel="noopener">Instagram</a> &nbsp; <a href="#" data-rede="facebook" target="_blank" rel="noopener">Facebook</a></p>
+      <p class="footer__copy" id="copy"></p>
+    </div>
+  </footer>
+
+  <a class="fab" href="#atendimento">Falar no WhatsApp</a>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
