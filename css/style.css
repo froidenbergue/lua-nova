@@ -50,22 +50,43 @@ p { margin: 0; }
 .burger[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
 
 /* Hero */
-.hero { position: relative; padding: clamp(2.5rem, 7vw, 5rem) 0 0; background: radial-gradient(60% 70% at 78% 45%, rgba(217,169,74,.16), transparent 70%), var(--black); }
-.hero__in { display: grid; gap: 2.5rem; align-items: center; }
-.hero__tag { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; color: var(--gold); font-weight: 500; margin-bottom: 1.2rem; }
-.pill { font-size: .85rem; padding: .15rem .7rem; border-radius: 999px; border: 1px solid currentColor; }
-.pill--on { color: #8fd19e; } .pill--off { color: var(--muted); }
-.hero h1 { font-size: clamp(2.6rem, 8vw, 5rem); color: var(--cream); max-width: 12ch; }
-.hero__sub { margin: 1.4rem 0 2rem; max-width: 46ch; color: var(--muted); font-size: 1.15rem; }
-.hero__cta { display: flex; flex-wrap: wrap; gap: .8rem; }
-.hero__foto { height: min(125vw, 700px); margin-inline: calc(-1 * var(--pad)); overflow: hidden; }
-.hero__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
-@media (prefers-reduced-motion: no-preference) {
-  .hero__foto { animation: aparecer 1.2s cubic-bezier(.2,.7,.2,1) both; }
-  .hero__txt > * { animation: subir .8s cubic-bezier(.2,.7,.2,1) both; }
-  .hero__txt > :nth-child(2) { animation-delay: .1s; } .hero__txt > :nth-child(3) { animation-delay: .2s; } .hero__txt > :nth-child(4) { animation-delay: .3s; }
+.hero { position: relative; overflow: hidden; display: flex; flex-direction: column; padding-top: clamp(2.5rem, 8vw, 4rem); background: radial-gradient(60% 70% at 72% 45%, rgba(217,169,74,.07), transparent 72%), var(--black); }
+.hero__in { order: 1; position: relative; z-index: 3; }
+.hero__txt { position: relative; z-index: 2; }
+.hero h1 { font-size: clamp(2rem, 10vw, 2.9rem); line-height: 1; letter-spacing: .015em; text-transform: uppercase; white-space: nowrap; color: var(--cream); }
+.hero__linha { display: block; width: 56px; height: 1px; margin: 1.5rem 0; background: var(--gold); }
+.hero__sub { max-width: 27ch; color: var(--muted); font-size: 1.05rem; line-height: 1.65; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.hero .btn { min-height: 46px; padding: .7rem 1.4rem; border-radius: 2px; font-size: .76rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
+.hero .btn:not(.btn--ghost)::after { content: "\2192"; margin-left: .7rem; font-size: 1rem; letter-spacing: 0; }
+.hero .btn--ghost { border-color: rgba(217,169,74,.45); }
+.hero .btn--ghost:hover { border-color: var(--gold-hi); }
+.hero__tag { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; margin-top: 2.25rem; color: rgba(217,169,74,.85); font-size: .7rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; }
+.hero__tag .pill { padding: .05rem .55rem; font-size: .62rem; letter-spacing: .16em; opacity: .75; }
+.hero__marca { position: absolute; z-index: 0; right: -6vw; bottom: 20vw; font: 600 24vw/.8 var(--serif); letter-spacing: .02em; color: rgba(217,169,74,.075); white-space: nowrap; user-select: none; pointer-events: none; }
+.hero__vertical { display: none; }
+.hero__foto { order: 2; position: relative; z-index: 1; height: min(128vw, 700px); margin-top: 1.5rem; pointer-events: none; }
+.hero__foto::before { content: ""; position: absolute; left: 50%; top: 8%; width: 110%; height: 80%; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(217,169,74,.14), rgba(217,169,74,.05) 60%, transparent); filter: blur(40px); }
+.hero__foto img { position: absolute; left: 50%; top: 1%; height: 122%; width: auto; max-width: none; transform: translateX(-50%); }
+@media (min-width: 820px) {
+  .hero { flex-direction: row; align-items: center; min-height: clamp(640px, calc(100svh - var(--header-h)), 860px); padding: 0 0 2rem; }
+  .hero h1 { font-size: clamp(2.8rem, 4.8vw, 4.5rem); }
+  .hero__marca { right: -3vw; bottom: auto; top: 50%; transform: translateY(-50%); font-size: clamp(9rem, 15.5vw, 17rem); }
+  .hero__vertical { position: absolute; z-index: 3; right: clamp(.9rem, 2vw, 2rem); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 1rem; color: rgba(217,169,74,.7); }
+  .hero__vertical i { width: 1px; height: 64px; background: rgba(217,169,74,.5); }
+  .hero__vertical b { writing-mode: vertical-rl; font-size: .68rem; font-weight: 500; letter-spacing: .34em; text-transform: uppercase; }
+  .hero__foto { position: absolute; inset: 0; height: auto; margin: 0; }
+  .hero__foto::before { left: 70%; top: 44%; width: 75%; height: 95%; transform: translate(-50%, -50%); }
+  .hero__foto img { left: 70%; top: 1%; height: 120%; }
 }
-@keyframes aparecer { from { opacity: 0; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero__foto { animation: aparecer 1.4s cubic-bezier(.2,.7,.2,1) both; }
+  .hero__marca { animation: surgir 2s ease both; }
+  .hero__txt > * { animation: subir .9s cubic-bezier(.2,.7,.2,1) both; }
+  .hero__txt > :nth-child(2) { animation-delay: .08s; } .hero__txt > :nth-child(3) { animation-delay: .16s; } .hero__txt > :nth-child(4) { animation-delay: .24s; } .hero__txt > :nth-child(5) { animation-delay: .32s; }
+}
+@keyframes aparecer { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+@keyframes surgir { from { opacity: 0; } }
 @keyframes subir { from { opacity: 0; transform: translateY(16px); } }
 
 /* Família */
@@ -287,10 +308,6 @@ address { font-style: normal; margin: 1.2rem 0 2rem; color: var(--muted); }
   .nav a { padding: .9rem 0; border-bottom: 1px solid rgba(217,169,74,.15); }
 }
 @media (min-width: 820px) {
-  .hero { display: flex; align-items: center; min-height: clamp(560px, 46vw, 700px); padding-bottom: var(--sec); }
-  .hero__in { grid-template-columns: minmax(0, 1fr); }
-  .hero__txt { max-width: min(580px, calc(54vw - var(--pad) - 1.5rem)); }
-  .hero__foto { position: absolute; top: 0; right: 0; bottom: 0; width: 46%; height: auto; margin: 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%); mask-image: linear-gradient(90deg, transparent, #000 14%); }
   .familia__lista { grid-template-columns: repeat(4, 1fr); }
   .familia__lista li { padding-right: 1.5rem; border-bottom: 0; }
   .equipe { grid-template-columns: repeat(4, 1fr); }
