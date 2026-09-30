@@ -2,7 +2,7 @@
 const CONFIG = {
   empresa: {
     nome: "Lua Nova",
-    fundacao: 2012,
+    fundacao: 2008,
     cidade: "Santo Ângelo",
     estado: "RS",
   },
