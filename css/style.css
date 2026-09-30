@@ -79,6 +79,15 @@ p { margin: 0; }
   .hero__foto::before { left: 70%; top: 44%; width: 75%; height: 95%; transform: translate(-50%, -50%); }
   .hero__foto img { left: 70%; top: 1%; height: 120%; }
 }
+/* Hero mobile: modelo ao fundo (alta, à direita, translúcida), conteúdo à frente */
+@media (max-width: 819px) {
+  .hero { position: relative; --foto-top: calc(clamp(2.5rem, 8vw, 4rem) + 20px); --foto-h: min(145vw, 780px); min-height: calc(var(--foto-top) + var(--foto-h)); padding-bottom: 2.5rem; }
+  .hero__foto { position: absolute; z-index: 1; inset: 0; height: auto; margin: 0; }
+  .hero__foto::before { left: 70%; top: calc(var(--foto-top) + 45vw); width: 100vw; height: 90vw; transform: translate(-50%, -50%); }
+  .hero__foto img { position: absolute; left: auto; right: -26vw; top: var(--foto-top); bottom: auto; height: var(--foto-h); transform: none; opacity: .4; -webkit-mask-image: linear-gradient(180deg, #000 0, #000 68%, transparent 100%); mask-image: linear-gradient(180deg, #000 0, #000 68%, transparent 100%); }
+  .hero__in { position: relative; z-index: 3; }
+  .hero__txt { position: relative; z-index: 4; }
+}
 @media (prefers-reduced-motion: no-preference) {
   .hero__foto { animation: aparecer 1.4s cubic-bezier(.2,.7,.2,1) both; }
   .hero__marca { animation: surgir 2s ease both; }
