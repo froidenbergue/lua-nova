@@ -16,6 +16,13 @@
       property="og:description"
       content="Moda para toda a família, com atendimento de perto. Fale direto no WhatsApp."
     />
+    <!-- PENDENTE (domínio oficial): trocar og:image por URL absoluta e adicionar og:url e rel="canonical" com o domínio real. -->
+    <meta property="og:site_name" content="Lua Nova" />
+    <meta property="og:image" content="assets/images/logo.jpg" />
+    <meta property="og:image:width" content="640" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content="Logo da Lua Nova, monograma LN dourado sobre fundo preto" />
+    <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +37,9 @@
         "@type": "ClothingStore",
         "name": "Lua Nova",
         "foundingDate": "2008",
+        "description": "Loja de roupas e calçados femininos, masculinos, infantis e para bebês em Santo Ângelo/RS.",
+        "geo": { "@type": "GeoCoordinates", "latitude": -28.2983466, "longitude": -54.2443314 },
+        "hasMap": "https://www.google.com/maps/place/Lua+Nova/@-28.2983466,-54.2633858,15z/data=!4m10!1m2!2m1!1slua+nova+santo+angelo!3m6!1s0x94fe9a7be7809287:0x67d2697c108226a5!8m2!3d-28.2983466!4d-54.2443314!15sChVsdWEgbm92YSBzYW50byBhbmdlbG-SAQ5jbG90aGluZ19zdG9yZeABAA!16s%2Fg%2F11j4t6d88w?entry=ttu&g_ep=EgoyMDI2MDkyNy4wIKXMDSoASAFQAw%3D%3D",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Avenida Sagrada Família, 64",
@@ -269,7 +279,10 @@
             </svg>
           </a>
         </div>
-        <p class="footer__copy" id="copy"></p>
+        <div class="footer__bottom">
+          <p class="footer__copy" id="copy"></p>
+          <p class="footer__legal"><a href="privacidade.html">Política de Privacidade</a></p>
+        </div>
       </div>
     </footer>
 

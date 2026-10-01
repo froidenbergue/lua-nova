@@ -326,3 +326,33 @@ address { font-style: normal; margin: 1.2rem 0 2rem; color: var(--muted); }
   .footer__in { grid-template-columns: auto 1fr auto; align-items: center; }
   .footer__copy { grid-column: 1 / -1; }
 }
+
+/* Rodapé: link da Política de Privacidade */
+.footer__bottom { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.5rem; }
+.footer__legal { font-size: .85rem; }
+.footer__legal a { text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 820px) { .footer__bottom { grid-column: 1 / -1; } }
+
+/* Páginas internas: Política de Privacidade e 404 */
+.header__in--simple { display: flex; justify-content: space-between; }
+.footer--simple { padding-bottom: 2.5rem; }
+.footer--simple .footer__copy a { text-decoration: underline; text-underline-offset: 3px; }
+.legal { padding: clamp(2.5rem, 7vw, 5rem) 0 var(--sec); }
+.legal__in { max-width: 760px; }
+.legal h1 { font-size: clamp(2.3rem, 7vw, 3.6rem); color: var(--cream); }
+.legal__data { margin-top: .8rem; color: var(--gold); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+.legal h2 { margin: 2.4rem 0 .9rem; padding-top: 1.6rem; border-top: 1px solid rgba(217,169,74,.25); font-size: clamp(1.45rem, 4vw, 1.85rem); color: var(--gold-hi); }
+.legal p, .legal li { color: var(--muted); line-height: 1.75; }
+.legal p { margin-bottom: 1rem; }
+.legal strong { color: var(--cream); font-weight: 500; }
+.legal ul { list-style: disc; padding-left: 1.3rem; margin: 0 0 1rem; }
+.legal li { margin-bottom: .6rem; }
+.legal li::marker { color: var(--gold); }
+.legal a { color: var(--gold-hi); text-underline-offset: 3px; }
+.erro { display: grid; place-items: center; min-height: 100vh; min-height: 100svh; padding: 2.5rem var(--pad); text-align: center; background: radial-gradient(60% 50% at 50% 40%, rgba(217,169,74,.09), transparent 72%), var(--black); }
+.erro__in { max-width: 34rem; }
+.erro__logo { width: 88px; height: 88px; margin: 0 auto 1.5rem; border-radius: 50%; }
+.erro__num { font: 600 clamp(6rem, 26vw, 11rem)/.9 var(--serif); letter-spacing: .02em; color: var(--gold); }
+.erro h1 { margin-top: .8rem; font-size: clamp(1.7rem, 5.5vw, 2.4rem); color: var(--cream); }
+.erro__in > p:not(.erro__num):not(.erro__rodape) { max-width: 30rem; margin: 1rem auto 2rem; color: var(--muted); }
+.erro__rodape { margin-top: 2.5rem; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(217,169,74,.7); }

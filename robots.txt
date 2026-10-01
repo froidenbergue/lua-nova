@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# PENDENTE (domínio oficial ainda não informado):
+# quando o domínio existir, adicione abaixo a linha Sitemap com a URL absoluta
+# do sitemap.xml, no mesmo domínio usado no sitemap.xml e no canonical do index.html.
+# Sitemap: https://SEU-DOMINIO-OFICIAL/sitemap.xml

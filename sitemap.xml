@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--
+    PENDENTE: o domínio oficial da Lua Nova ainda não foi informado.
+    Sitemaps exigem URLs absolutas, por isso nenhuma URL foi inventada.
+    Quando o domínio existir, substitua este comentário pelas entradas abaixo
+    (trocando SEU-DOMINIO-OFICIAL pelo domínio real, o mesmo do robots.txt e do canonical):
+
+    <url><loc>https://SEU-DOMINIO-OFICIAL/</loc></url>
+    <url><loc>https://SEU-DOMINIO-OFICIAL/privacidade.html</loc></url>
+
+    A página 404.html não deve ser listada.
+  -->
+</urlset>
