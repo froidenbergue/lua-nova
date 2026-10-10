@@ -11,6 +11,8 @@ const CONFIG = {
   contato: {
     mensagemPadrao: "Olá, gostaria de receber mais informações!",
     grupoPromocoes: "https://chat.whatsapp.com/KrXTLWoDDGv2ZhEHtlUinj",
+    grupoLoja: "https://chat.whatsapp.com/CKIHldc2iVPJYAtFneYVf9",
+    mensagemCondicional: "Olá! Gostaria de solicitar um condicional da Lua Nova.",
   },
 
   equipe: [
@@ -18,6 +20,8 @@ const CONFIG = {
     { nome: "Andreia", cargo: "Vendedora", whatsapp: "55999155914", foto: "assets/images/equipe/andreia.jpg" },
     { nome: "Priscila", cargo: "Gerente", whatsapp: "55981248526", foto: "assets/images/equipe/priscila.jpg" },
     { nome: "Di Hellen", cargo: "Caixa", whatsapp: "55991549697", foto: "assets/images/equipe/di-hellen.jpg" },
+    { nome: "Gleice", cargo: "Vendedora", whatsapp: "5597147203", foto: "" }, // sem foto: o site exibe um avatar
+    { nome: "Letícia", cargo: "Vendedora", whatsapp: "5597205738", foto: "assets/images/equipe/leticia.jpg" },
   ],
 
   endereco: {
@@ -54,5 +58,21 @@ const CONFIG = {
     { nome: "Beira Rio", img: "assets/images/marcas/beirario.jpg" },
     { nome: "Coca-Cola", img: "assets/images/marcas/cocacola.jpg" },
     { nome: "Sallo", img: "assets/images/marcas/sallo.jpg" },
+    { nome: "Anemone", img: "assets/images/marcas/anemone.jpg" },
+    { nome: "BR Sports", img: "assets/images/marcas/brsports.jpg" },
+    { nome: "Divero", img: "assets/images/marcas/divero.jpg" },
+    { nome: "Freeway", img: "assets/images/marcas/freeway.jpg" },
+    { nome: "Modare", img: "assets/images/marcas/modare.jpg" },
+    { nome: "Moleca", img: "assets/images/marcas/moleca.jpg" },
+    { nome: "Molekinho", img: "assets/images/marcas/molekinho.jpg" },
+    { nome: "Mpollo", img: "assets/images/marcas/mpollo.jpg" },
+    { nome: "MX72", img: "assets/images/marcas/mx72.jpg" },
+    { nome: "Peregrino", img: "assets/images/marcas/peregrino.jpg" },
+    { nome: "Pura Arte Joias", img: "assets/images/marcas/puraartejoias.jpg" },
+    { nome: "Rovi Kids", img: "assets/images/marcas/rovikids.jpg" },
+    { nome: "Rovitex", img: "assets/images/marcas/rovitex.jpg" },
+    { nome: "Trick Nick", img: "assets/images/marcas/tricknick.jpg" },
+    { nome: "Trifil", img: "assets/images/marcas/trifil.jpg" },
+    { nome: "Visual Jeans", img: "assets/images/marcas/visualjeans.jpg" },
   ],
 };

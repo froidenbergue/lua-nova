@@ -9,6 +9,7 @@
       content="Loja de roupas e calçados femininos, masculinos, infantis e para bebês em Santo Ângelo/RS. Conheça as marcas, a equipe e fale direto no WhatsApp."
     />
     <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href="https://luanovasa.com.br/" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content="Lua Nova" />
@@ -16,9 +17,9 @@
       property="og:description"
       content="Moda para toda a família, com atendimento de perto. Fale direto no WhatsApp."
     />
-    <!-- PENDENTE (domínio oficial): trocar og:image por URL absoluta e adicionar og:url e rel="canonical" com o domínio real. -->
     <meta property="og:site_name" content="Lua Nova" />
-    <meta property="og:image" content="assets/images/logo.jpg" />
+    <meta property="og:url" content="https://luanovasa.com.br/" />
+    <meta property="og:image" content="https://luanovasa.com.br/assets/images/logo.jpg" />
     <meta property="og:image:width" content="640" />
     <meta property="og:image:height" content="640" />
     <meta property="og:image:alt" content="Logo da Lua Nova, monograma LN dourado sobre fundo preto" />
@@ -36,6 +37,9 @@
         "@context": "https://schema.org",
         "@type": "ClothingStore",
         "name": "Lua Nova",
+        "url": "https://luanovasa.com.br/",
+        "logo": "https://luanovasa.com.br/assets/images/logo.jpg",
+        "image": "https://luanovasa.com.br/assets/images/logo.jpg",
         "foundingDate": "2008",
         "description": "Loja de roupas e calçados femininos, masculinos, infantis e para bebês em Santo Ângelo/RS.",
         "geo": { "@type": "GeoCoordinates", "latitude": -28.2983466, "longitude": -54.2443314 },
@@ -65,7 +69,7 @@
 
     <header class="header" id="topo">
       <div class="container header__in">
-        <a class="brand" href="#inicio" aria-label="Lua Nova, início">
+        <a class="brand" href="https://luanovasa.com.br" aria-label="Lua Nova, início">
           <img
             src="assets/images/logo.jpg"
             alt="Logo Lua Nova"
@@ -76,6 +80,7 @@
         </a>
         <nav class="nav" id="menu" aria-label="Principal">
           <a href="#inicio">Início</a>
+          <a href="#condicional">Condicional</a>
           <a href="#marcas">Marcas</a>
           <a href="#atendimento">Atendimento</a>
           <a href="#loja">Loja</a>
@@ -124,8 +129,7 @@
             <span class="hero__linha" aria-hidden="true"></span>
             <p class="hero__sub">Moda para toda a família, escolhida para acompanhar cada momento.</p>
             <div class="hero__cta">
-              <a class="btn" href="#atendimento">Escolher quem me atende</a>
-              <a class="btn btn--ghost" href="#" data-grupo target="_blank" rel="noopener">Grupo de promoções</a>
+              <a class="btn" href="#atendimento">Contatos para me atender</a>
             </div>
             <p class="hero__tag" id="status">Desde 2008 · Santo Ângelo/RS</p>
           </div>
@@ -134,7 +138,10 @@
 
       <section class="familia" aria-labelledby="t-familia">
         <div class="container">
-          <h2 id="t-familia">Roupas e calçados para cada fase da vida</h2>
+          <div class="familia__intro">
+            <h2 id="t-familia">Roupas e calçados para cada fase da vida</h2>
+            <img class="familia__foto-mobile" src="assets/images/familia-modelo.webp" alt="" aria-hidden="true" width="975" height="1614" loading="lazy" decoding="async" />
+          </div>
           <ul class="familia__lista">
             <li>
               <strong>Feminino</strong
@@ -155,14 +162,21 @@
         </div>
       </section>
 
+      <section class="condicional" id="condicional" aria-labelledby="t-cond">
+        <div class="container condicional__in">
+          <h2 id="t-cond">Experimente no conforto de casa</h2>
+          <p>Escolha suas peças com calma. A Lua Nova entrega condicional em toda a cidade de Santo Ângelo para você experimentar e escolher seus favoritos com tranquilidade.</p>
+          <a class="btn" href="#" data-whatsapp-condicional>Pedir meu condicional</a>
+          <img class="condicional__foto-mobile" src="assets/images/condicional-modelo.webp" alt="Modelo usando uma camisa terracota" width="1465" height="1073" loading="lazy" decoding="async" />
+        </div>
+      </section>
+
       <section class="marcas" id="marcas" aria-labelledby="t-marcas">
         <div class="container marcas__head">
           <h2 id="t-marcas">Marcas que você encontra na Lua Nova</h2>
           <p>Passe por aqui e conheça as marcas com que trabalhamos.</p>
         </div>
-        <div class="marquee" id="marquee" aria-label="Carrossel de marcas">
-          <ul class="marquee__track" id="marcas-track"></ul>
-        </div>
+        <div class="marquee" id="marquee" role="group" aria-label="Marcas disponíveis na Lua Nova"></div>
       </section>
 
       <section class="atend" id="atendimento" aria-labelledby="t-atend">

@@ -107,18 +107,22 @@ p { margin: 0; }
 .familia__lista span { display: block; margin-top: .4rem; }
 
 /* Marcas */
-.marcas { padding: var(--sec) 0; background: var(--coal); overflow: hidden; }
+.marcas { --tile: 96px; padding: var(--sec) 0; background: var(--coal); overflow: hidden; }
 .marcas__head { margin-bottom: 2.5rem; }
 .marcas__head p { color: var(--muted); margin-top: .8rem; }
-.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee__track { display: flex; gap: 1.4rem; width: max-content; animation: correr 45s linear infinite; }
+.marcas__head .marcas__count { margin-top: 1.5rem; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
+.marcas__count strong { margin-right: .5rem; font: 600 2.6rem/1 var(--serif); letter-spacing: 0; color: var(--gold); vertical-align: -.12em; }
+.marquee { display: grid; gap: 1.2rem; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.marquee__row { overflow: hidden; }
+.marquee__track { display: flex; width: max-content; animation: correr var(--dur, 80s) linear infinite; will-change: transform; }
+.marquee__row--rev .marquee__track { animation-direction: reverse; }
 .marquee:hover .marquee__track { animation-play-state: paused; }
-.marca { width: 160px; flex: none; text-align: center; }
-.marca img { width: 160px; height: 160px; object-fit: cover; border-radius: 18px; border: 1px solid rgba(217,169,74,.3); }
-.marca span { display: block; margin-top: .7rem; font-weight: 500; color: var(--gold-hi); }
+.marca { flex: none; width: var(--tile); margin-right: 1rem; text-align: center; }
+.marca img { width: var(--tile); height: var(--tile); object-fit: cover; border-radius: 14px; border: 1px solid rgba(217,169,74,.3); }
 @keyframes correr { to { transform: translateX(-50%); } }
+@media (min-width: 820px) { .marcas { --tile: 132px; } .marca { margin-right: 1.25rem; } }
 @media (prefers-reduced-motion: reduce) {
-  .marquee { overflow-x: auto; } .marquee__track { animation: none; }
+  .marquee__row { overflow-x: auto; } .marquee__track { animation: none; }
   .marca[aria-hidden="true"] { display: none; }
 }
 
@@ -138,6 +142,9 @@ p { margin: 0; }
 .grupo div { flex: 1 1 260px; }
 .grupo h3 { color: var(--gold-hi); }
 .grupo p { color: var(--muted); }
+.grupos { display: grid; gap: 1rem; margin-top: 1rem; }
+.grupos .grupo { display: grid; grid-template-columns: 64px 1fr; align-content: space-between; align-items: center; gap: 1rem 1.2rem; margin-top: 0; }
+.grupos .grupo .btn { grid-column: 1 / -1; justify-self: start; }
 
 /* Loja */
 .loja { padding: var(--sec) 0; background: var(--coal); }
@@ -356,3 +363,273 @@ address { font-style: normal; margin: 1.2rem 0 2rem; color: var(--muted); }
 .erro h1 { margin-top: .8rem; font-size: clamp(1.7rem, 5.5vw, 2.4rem); color: var(--cream); }
 .erro__in > p:not(.erro__num):not(.erro__rodape) { max-width: 30rem; margin: 1rem auto 2rem; color: var(--muted); }
 .erro__rodape { margin-top: 2.5rem; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(217,169,74,.7); }
+
+/* Família: modelo ao fundo */
+.familia { position: relative; overflow: hidden; background: radial-gradient(55% 60% at 22% 48%, rgba(138,100,32,.16), transparent 72%), var(--cream); }
+.familia .container { position: relative; z-index: 1; }
+.familia::after { content: ""; position: absolute; z-index: 0; pointer-events: none; background: url("../assets/images/familia-modelo.webp") no-repeat; }
+
+/* Condicional */
+.condicional { position: relative; overflow: hidden; padding: var(--sec) 0; background: radial-gradient(60% 55% at 70% 60%, rgba(217,169,74,.12), transparent 72%), var(--black); }
+.condicional__in { position: relative; z-index: 1; }
+.condicional h2 { max-width: 14ch; color: var(--cream); }
+.condicional p { max-width: 38ch; margin-top: 1.1rem; color: var(--muted); font-size: 1.1rem; }
+.condicional .btn { margin-top: 2rem; }
+.condicional::after { content: ""; position: absolute; z-index: 0; pointer-events: none; background: url("../assets/images/condicional-modelo.webp") no-repeat; }
+
+/* Equipe: avatar para quem não tem foto */
+.pessoa__avatar { display: grid; place-items: start center; width: 100%; height: 100%; padding-top: 12%; background: radial-gradient(70% 55% at 50% 38%, rgba(217,169,74,.26), transparent 75%), var(--coal); }
+.pessoa__avatar svg { width: 36%; fill: none; stroke: var(--gold-hi); stroke-width: 1.1; stroke-linecap: round; opacity: .85; }
+
+/* Política de Privacidade: identificação do responsável */
+.legal__id { margin-top: 2rem; padding: 1.2rem 1.4rem; border: 1px solid rgba(217,169,74,.3); border-radius: 12px; }
+.legal__id p { margin: 0; }
+.legal__id dl { display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.2rem; margin: .8rem 0 0; }
+.legal__id dt { color: var(--gold-hi); font-weight: 500; }
+.legal__id dd { margin: 0; color: var(--cream); }
+
+@media (max-width: 559px) { .legal__id dl { grid-template-columns: 1fr; gap: .1rem; } .legal__id dd { margin-bottom: .6rem; } }
+@media (min-width: 820px) {
+  .familia { display: flex; align-items: center; min-height: 640px; }
+  .familia h2, .familia__lista { margin-left: auto; max-width: min(600px, 54%); }
+  .familia__lista { grid-template-columns: repeat(2, 1fr); }
+  .familia__lista li { border-bottom: 1px solid rgba(138,100,32,.35); }
+  .familia::after { top: 0; bottom: 0; left: max(var(--pad), calc((100% - 1120px) / 2)); width: 42%; background-position: left top; background-size: auto 112%; }
+  .condicional { display: flex; align-items: center; min-height: 600px; padding: 0; }
+  .condicional__in { padding-block: var(--sec); }
+  .condicional::after { inset: 0; background-position: right 8% bottom; background-size: auto 94%; }
+  .equipe { grid-template-columns: repeat(3, 1fr); }
+  .grupos { grid-template-columns: 1fr 1fr; }
+  .pessoa__avatar { place-items: center; padding: 0 0 22%; }
+  .pessoa__avatar svg { width: 44%; }
+}
+
+/* Hero (desktop): com três botões, o grupo extra passa para a segunda linha e não encosta na modelo */
+@media (min-width: 820px) { .hero__cta { max-width: min(38rem, 48vw); } }
+
+/* =========================================================
+   REDESIGN MOBILE — FAMÍLIA E CONDICIONAL
+   Desktop preservado. No mobile, as imagens têm áreas próprias
+   para evitar sobreposição, cortes e modelos desproporcionais.
+   ========================================================= */
+.familia__foto-mobile,
+.condicional__foto-mobile { display: none; }
+
+@media (max-width: 819px) {
+  /* FAMÍLIA: título e modelo em uma faixa; categorias em cartões abaixo */
+  .familia {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(2.4rem, 7vw, 3.2rem) 0 3rem;
+    background: radial-gradient(70% 45% at 20% 20%, rgba(138,100,32,.12), transparent 75%), var(--cream);
+    color: var(--ink);
+  }
+
+  /* Desativa a fotografia de fundo antiga apenas no mobile. */
+  .familia::after { content: none; }
+  .familia .container { position: relative; z-index: 1; }
+  .familia__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(125px, 42%);
+    align-items: end;
+    gap: .25rem;
+    min-height: 225px;
+    margin-bottom: 1.1rem;
+  }
+  .familia__intro h2 {
+    align-self: center;
+    width: auto;
+    min-height: 0;
+    max-width: 13ch;
+    margin: 0;
+    text-align: left;
+    font-size: clamp(1.8rem, 6.4vw, 2.35rem);
+    line-height: 1.04;
+    overflow-wrap: normal;
+  }
+  .familia__foto-mobile {
+    display: block;
+    width: 100%;
+    max-width: 190px;
+    max-height: 270px;
+    height: auto;
+    justify-self: end;
+    align-self: end;
+    object-fit: contain;
+    object-position: center bottom;
+    filter: drop-shadow(0 8px 12px rgba(55,39,17,.08));
+  }
+  .familia__lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin: .25rem 0 0;
+    border-top: 1px solid rgba(138,100,32,.55);
+    text-align: left;
+  }
+  .familia__lista li,
+  .familia__lista li:nth-child(even),
+  .familia__lista li:nth-child(odd) {
+    min-width: 0;
+    padding: 1rem .7rem 1.1rem 0;
+    border-bottom: 1px solid rgba(138,100,32,.28);
+    overflow-wrap: break-word;
+  }
+  .familia__lista li:nth-child(even) { padding-left: .8rem; padding-right: 0; border-left: 1px solid rgba(138,100,32,.18); }
+  .familia__lista strong {
+    display: block;
+    font-size: clamp(1.45rem, 5.2vw, 1.85rem);
+    line-height: 1.05;
+    overflow-wrap: normal;
+  }
+  .familia__lista span {
+    display: block;
+    margin-top: .4rem;
+    font-size: clamp(.9rem, 3.7vw, 1rem);
+    line-height: 1.45;
+  }
+
+  /* CONDICIONAL: texto e CTA primeiro; modelo grande em área própria abaixo */
+  .condicional {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 0;
+    padding: clamp(2.6rem, 8vw, 3.5rem) 0 0;
+    background: radial-gradient(70% 45% at 75% 70%, rgba(217,169,74,.10), transparent 72%), var(--black);
+  }
+  .condicional::after { content: none; }
+  .condicional__in {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+  .condicional h2 {
+    max-width: 13ch;
+    color: var(--cream);
+    font-size: clamp(2rem, 7.2vw, 2.6rem);
+    line-height: 1.02;
+  }
+  .condicional p {
+    max-width: 36ch;
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: clamp(1rem, 4vw, 1.08rem);
+    line-height: 1.6;
+  }
+  .condicional .btn {
+    margin-top: 1.35rem;
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    padding-inline: clamp(1rem, 5vw, 1.6rem);
+  }
+  .condicional__foto-mobile {
+    display: block;
+    width: min(100%, 410px);
+    height: auto;
+    max-height: 310px;
+    object-fit: contain;
+    object-position: right bottom;
+    align-self: flex-end;
+    margin-top: .1rem;
+    margin-right: calc(-1 * var(--pad));
+    margin-bottom: -1px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 82%, rgba(0,0,0,.88) 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 82%, rgba(0,0,0,.88) 100%);
+  }
+}
+
+@media (max-width: 380px) {
+  .familia__intro {
+    grid-template-columns: minmax(0, 1fr) minmax(112px, 40%);
+    min-height: 205px;
+  }
+  .familia__intro h2 { font-size: clamp(1.65rem, 6.3vw, 1.9rem); }
+  .familia__foto-mobile { max-height: 235px; }
+  .familia__lista li,
+  .familia__lista li:nth-child(even),
+  .familia__lista li:nth-child(odd) { padding-top: .85rem; padding-bottom: .95rem; }
+  .familia__lista strong { font-size: 1.35rem; }
+  .familia__lista span { font-size: .88rem; }
+  .condicional__foto-mobile { max-height: 270px; }
+}
+
+
+/* =========================================================
+   MOBILE: OCULTAR FOTOGRAFIAS NAS SEÇÕES FAMÍLIA E CONDICIONAL
+   As fotos continuam visíveis no desktop a partir de 820px.
+   ========================================================= */
+@media (max-width: 819px) {
+  .familia__foto-mobile,
+  .condicional__foto-mobile {
+    display: none !important;
+  }
+
+  .familia__intro {
+    display: block;
+    min-height: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .familia__intro h2 {
+    width: 100%;
+    max-width: 17ch;
+    min-height: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .condicional {
+    min-height: 0;
+    padding-top: clamp(2.6rem, 8vw, 3.5rem);
+    padding-bottom: clamp(2.8rem, 9vw, 4rem);
+  }
+
+  .condicional__in {
+    padding-bottom: 0;
+  }
+
+  .condicional p {
+    max-width: 38ch;
+  }
+}
+
+@media (min-width: 820px) {
+  .familia__foto-mobile,
+  .condicional__foto-mobile {
+    display: none !important;
+  }
+}
+
+
+/* TABLET: manter o modelo da seção Família atrás do conteúdo, sem corte lateral */
+@media (min-width: 820px) and (max-width: 1100px) {
+  .familia {
+    min-height: 620px;
+  }
+
+  .familia .container {
+    z-index: 1;
+  }
+
+  .familia h2,
+  .familia__lista {
+    position: relative;
+    z-index: 1;
+    max-width: 56%;
+  }
+
+  .familia::after {
+    left: 0;
+    width: 64%;
+    background-position: left center;
+    background-size: auto 100%;
+    opacity: .92;
+  }
+}
