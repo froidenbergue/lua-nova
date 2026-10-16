@@ -45,6 +45,7 @@ const CONFIG = {
   ],
 
   links: {
+    avaliacao: "https://www.google.com/search?q=lua+nova+santo+angelo&rlz=1C1UEAD_enBR1086BR1086&oq=lua+&gs_lcrp=EgZjaHJvbWUqCwgAEEUYJxg7GPAFMgsIABBFGCcYOxjwBTIGCAEQRRg5MggIAhBFGCcYOzIGCAMQRRg8MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQgxODMwajBqN6gCALACAA&sourceid=chrome&source=chrome.ob&ie=UTF-8#sv=CAESzQEKuQEStgEKd0FKaVQ0dEplS3h1Y29wRi0yTDlGaHlKcS1lZXEyUU5iLXdZR3IwaGJtdTZLWGNlOFFJbG9QTTlyS0hOUDhMeHo0aTFtWkJaLXI5YWhMamlNaC1RZm84anEtQjZGZXRKM0FOdERTdlVRenM5ci1FMnlaS29DZHBREhdMV2ZSYW9TbkdQTGUxc1FQaGZ5UnVBMBoiQURzcjlmUl9QbG5xaHVlQ0Z5MXpPTkJaOTBtc0R2UVNjZxIEODA1MRoBMyoAMAA4AUAAGAAgvKnlxAJKAhAB",
     maps: "https://www.google.com/maps/place/Lua+Nova/@-28.2983466,-54.2633858,15z/data=!4m10!1m2!2m1!1slua+nova+santo+angelo!3m6!1s0x94fe9a7be7809287:0x67d2697c108226a5!8m2!3d-28.2983466!4d-54.2443314!15sChVsdWEgbm92YSBzYW50byBhbmdlbG-SAQ5jbG90aGluZ19zdG9yZeABAA!16s%2Fg%2F11j4t6d88w?entry=ttu&g_ep=EgoyMDI2MDkyNy4wIKXMDSoASAFQAw%3D%3D",
   },
 

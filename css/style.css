@@ -633,3 +633,18 @@ address { font-style: normal; margin: 1.2rem 0 2rem; color: var(--muted); }
     opacity: .92;
   }
 }
+
+/* Avaliação */
+.avaliacao { padding: var(--sec) 0; text-align: center; color: var(--ink); background: radial-gradient(55% 90% at 50% 0%, rgba(138,100,32,.14), transparent 72%), var(--cream); }
+.avaliacao__in { max-width: 40rem; }
+.avaliacao__estrelas { display: flex; justify-content: center; gap: .35rem; margin-bottom: 1.5rem; color: var(--gold); }
+.avaliacao__estrelas svg { width: 1.9rem; height: 1.9rem; fill: currentColor; }
+.avaliacao p { max-width: 32rem; margin: 1rem auto 2rem; }
+
+/* Menu com 6 itens: em telas médias (tablets e notebooks pequenos) o cabeçalho fica mais compacto para caber sem rolagem horizontal */
+@media (min-width: 820px) and (max-width: 1099px) {
+  .header__in { gap: .75rem; }
+  .nav { gap: clamp(.8rem, 1.6vw, 1.4rem); }
+  .nav a { font-size: .9rem; }
+}
+.avaliacao h2 { text-wrap: balance; }

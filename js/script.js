@@ -14,6 +14,7 @@
   $$("[data-grupo]").forEach((a) => (a.href = C.contato.grupoPromocoes));
   $$("[data-grupo-loja]").forEach((a) => (a.href = C.contato.grupoLoja));
   $$("[data-maps]").forEach((a) => (a.href = C.links.maps));
+  $$("[data-avaliacao]").forEach((a) => (a.href = C.links.avaliacao));
   $$("[data-rede]").forEach((a) => (a.href = C.redes[a.dataset.rede]));
 
   /* Marcas: faixas contínuas em sentidos opostos (4 no celular, 3 no desktop). Só as logos aparecem; o nome fica no alt. */
